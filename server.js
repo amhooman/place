@@ -131,7 +131,7 @@ setInterval(() => {
 
 import { exec } from 'child_process'
 
-//let ORIGIN = (''+await fs.readFile("./.git-credentials")).trim()
+let ORIGIN = (''+await fs.readFile("../.git-credentials")).trim()
 
 async function pushImage(){
 	await new Promise((r, t) => exec("git add *;git commit -a -m 'Backup';git push --force "+ORIGIN+"/Zeus386/Zeus386.github.io", e => e ? t(e) : r()))
