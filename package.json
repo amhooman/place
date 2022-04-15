@@ -6,5 +6,26 @@
     "sha256": "^0.2.0",
     "websocket": "^1.0.34",
     "ws": "^8.5.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "Zeus386githubio",
+  "description": "Hola primico",
+  "version": "1.0.0",
+  "main": "add.js",
+  "devDependencies": {
+    "node": "^16.14.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zeus386/Zeus386.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zeus386/Zeus386.github.io/issues"
+  },
+  "homepage": "https://github.com/Zeus386/Zeus386.github.io#readme"
 }
