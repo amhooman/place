@@ -4,11 +4,11 @@ import {promises as fs} from 'fs'
 import {createServer} from 'https'
 import sha256 from 'sha256'
 import fsExists from 'fs.promises.exists';
-let SECURE = true
+let SECURE = false
 let BOARD, CHANGES
 
 //TODO: compress changes
-const WIDTH = 2000, HEIGHT = 2000, PALETTE_SIZE = 32, COOLDOWN = 10e3 //5mins
+const WIDTH = 500, HEIGHT = 500, PALETTE_SIZE = 32, COOLDOWN = 10e3 //5mins
 try{
 	BOARD = await fs.readFile('./place')
 	CHANGES = new Uint8Array(WIDTH * HEIGHT).fill(255)
