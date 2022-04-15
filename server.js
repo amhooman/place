@@ -134,7 +134,7 @@ import { exec } from 'child_process'
 let ORIGIN = (''+await fs.readFile("../.git-credentials")).trim()
 
 async function pushImage(){
-	await new Promise((r, t) => exec("git add *;git commit -a -m 'Hourly backup';git push --force "+ORIGIN+"/rslashplace2/rslashplace2.github.io", e => e ? t(e) : r()))
+	await new Promise((r, t) => exec("git add *;git commit -a -m 'Hourly backup';git push --force "+ORIGIN+"/Zeus386/Zeus386.github.io", e => e ? t(e) : r()))
 	//serve old changes for 11 more mins just to be 100% safe
 	let curr = new Uint8Array(CHANGES)
 	setTimeout(() => {
