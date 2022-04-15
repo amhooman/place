@@ -91,6 +91,7 @@ wss.on('connection', async function(p, {headers, url: uri}) {
 	buf.writeInt32BE(Math.ceil(cooldowns.get(IP) / 1000) || 1, 1)
 	p.send(buf)
 	players++
+  	console.log(IP, players)
 	p.send(runLengthChanges())
   p.on("error", _=>_)
   p.on('message', function(data) {
@@ -162,6 +163,7 @@ let I = 0
 
 setInterval(async function(){
 	I++
+  console.log('Cambiamos intervalo, valor: '+I);
 	for(let i = BOARD.length-1; i >= 0; i--)if(CHANGES[i]!=255)BOARD[i] = CHANGES[i]
 	await fs.writeFile('place', BOARD)
 	let buf = Buffer.of(3, players>>8, players)
@@ -169,7 +171,7 @@ setInterval(async function(){
 		c.send(buf)
 	}
 	//if(I % 720 == 0){
-  if(I % 20 == 0){
+  if(I % 300 == 0){
 		try{
                 	await pushImage()
                 	console.log("["+new Date().toISOString()+"] Successfully saved r/place!")
