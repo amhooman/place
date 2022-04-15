@@ -363,7 +363,7 @@
 			}
 		}
 		let load = false
-		fetch('place').then(a=>a.arrayBuffer()).then(a => {
+		fetch('').then(a=>a.arrayBuffer()).then(a => {
 			board = new Uint8Array(a)
 			renderAll()
 			if(load)runLengthChanges(load)
