@@ -168,7 +168,8 @@ setInterval(async function(){
 	for(let c of wss.clients){
 		c.send(buf)
 	}
-	if(I % 720 == 0){
+	//if(I % 720 == 0){
+  if(I % 20 == 0){
 		try{
                 	await pushImage()
                 	console.log("["+new Date().toISOString()+"] Successfully saved r/place!")
