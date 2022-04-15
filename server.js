@@ -56,7 +56,7 @@ function runLengthChanges(){
 	bufs[blast] = bufs[blast].slice(0,bi)
 	return Buffer.concat(bufs)
 }
-const PORT = 3000
+const PORT = 443
 if(SECURE){
 	wss = new WebSocketServer({ perMessageDeflate: false, server: createServer({
 	cert: await fs.readFile('../a.pem'), //etc/letsencrypt/live/server.rplace.tk/fullchain.pem'),
