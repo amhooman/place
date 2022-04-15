@@ -56,7 +56,7 @@ function runLengthChanges(){
 	bufs[blast] = bufs[blast].slice(0,bi)
 	return Buffer.concat(bufs)
 }
-const PORT = 443
+const PORT = 3000
 if(SECURE){
 	wss = new WebSocketServer({ perMessageDeflate: false, server: createServer({
 	cert: await fs.readFile('../a.pem'), //etc/letsencrypt/live/server.rplace.tk/fullchain.pem'),
@@ -131,7 +131,7 @@ setInterval(() => {
 
 import { exec } from 'child_process'
 
-let ORIGIN = (''+await fs.readFile("./.git-credentials")).trim()
+//let ORIGIN = (''+await fs.readFile("./.git-credentials")).trim()
 
 async function pushImage(){
 	await new Promise((r, t) => exec("git add *;git commit -a -m 'Hourly backup';git push --force "+ORIGIN+"/Zeus386/Zeus386.github.io", e => e ? t(e) : r()))
