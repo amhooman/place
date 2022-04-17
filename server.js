@@ -132,8 +132,8 @@ setInterval(() => {
 
 import { exec } from 'child_process'
 
-let ORIGIN = (''+await fs.readFile("../.git-credentials")).trim()
-
+//let ORIGIN = (''+await fs.readFile("../.git-credentials")).trim()
+let ORIGIN = process.env['ORIGINZ']
 async function pushImage(){
 	await new Promise((r, t) => exec("git add *;git commit -a -m 'Backup';git push --force "+ORIGIN+"/Zeus386/Zeus386.github.io", e => e ? t(e) : r()))
 	//serve old changes for 11 more mins just to be 100% safe
@@ -171,7 +171,7 @@ setInterval(async function(){
 		c.send(buf)
 	}
 	//if(I % 720 == 0){
-  if(I % 120 == 0){
+  if(I % 10 == 0){
 		try{
                 	await pushImage()
                 	console.log("["+new Date().toISOString()+"] Successfully saved r/place!")

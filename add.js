@@ -8,3 +8,4 @@ let txt = fs.readFileSync('../vip.txt').toString()
 txt += '\n' + sha256(rand)
 fs.writeFileSync('../vip.txt', txt)
 console.log('Key:',rand)
+
