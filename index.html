@@ -15,8 +15,7 @@
 <meta property="og:description" content="El nuevo y mejorado lienzo de pixeles! 🥶 The new and improved pixel canvas!" />
 <meta property="og:image" content="https://media.discordapp.net/attachments/797279132471787530/964645808685338685/unknown.png" />
 <meta name="theme-color" content="#ff4500">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7492601452630734"
-     crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7492601452630734" crossorigin="anonymous"></script>
 </head>
 	<body onkeypress="scanDocumentShortcuts(event)">
 		<div id="donate" noselect onclick="window.open('https://discord.gg/Cb5mm9vwz3','_blank')">Discord</div>
@@ -411,6 +410,10 @@
 				let newMessage = document.createElement("div")
 				newMessage.innerHTML = `<span style="color: ${CHAT_COLOURS[name ? hash(name) & 7 : (Math.round(Math.random() * 8))]};">[${name || "anon"}]</span> ${txt}\n`
 				let scroll = chatMessages.scrollTop+chatMessages.offsetHeight+10>=chatMessages.scrollHeight
+        				if (txt.includes("@" + localStorage.getItem("name"))) {
+					newMessage.style.backgroundColor = "rgba(255, 255, 0, 0.5)"
+				}
+
 				chatMessages.insertAdjacentElement("beforeEnd", newMessage)
 				if(chatMessages.children.length>100){
                     			chatMessages.children[0].remove()
