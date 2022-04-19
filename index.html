@@ -492,6 +492,12 @@
 			localStorage.setItem("name", name);
 			namePanel.style.visibility = "hidden"
 		}
+		function chatMentionUser(formattedName) {
+			let user = formattedName.slice(1, -1)
+			messageInput.focus()
+			let [start, end] = [messageInput.selectionStart, messageInput.selectionEnd]
+			messageInput.setRangeText("@" + user, start, end, 'select')
+		}
 	</script>
 	<!--script src="board_final.js"></script-->
 </html>
