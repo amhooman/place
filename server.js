@@ -73,8 +73,8 @@ if (!await fsExists('blacklist.txt')) {
 if (!await fsExists('cooldown_overrides.txt')) {
   await fs.writeFile("cooldown_overrides.txt", "", err => { if (err) { console.error(err); return; } });
 }
-if (!await fsExists('../vip.txt')) {
-  await fs.writeFile("../vip.txt", "", err => { if (err) { console.error(err); return; } });
+if (!await fsExists('./vip.txt')) {
+  await fs.writeFile("./vip.txt", "", err => { if (err) { console.error(err); return; } });
 }
 
 let players = 0
