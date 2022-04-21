@@ -380,7 +380,7 @@
 		let hash = a => a.split("").reduce((a,b)=>(a*31+b.charCodeAt())>>>0,0)
 		let allowed = new Set("rplace.tk google.com wikipedia.org pxls.space".split(" ")), censor = a => a.replace(/fuc?k|shi[t]|c[u]nt/gi,a=>"*".repeat(a.length)).replace(/https?:\/\/(\w+\.)+\w{2,15}(\/\S*)?|(\w+\.)+\w{2,15}\/\S*|(\w+\.)+(tk|ga|gg|gq|cf|ml|fun|xxx|webcam|sexy?|tube|cam|p[o]rn|adult|com|net|org|online|ru|co|info|link)/gi, a => allowed.has(a.replace(/^https?:\/\//,"").split("/")[0]) ? a : "").trim()
 		
-		let ws = new WebSocket('wss://Zeus386githubio.zeus386.repl.co:443' + (localStorage.vip ? "/" + localStorage.vip : ""))
+		let ws = new WebSocket((localStorage.server || 'wss://Zeus386githubio.zeus386.repl.co:443') + (localStorage.vip ? "/" + localStorage.vip : ""))
 		ws.onmessage = async function({data}){
 			data = new DataView(await data.arrayBuffer())
 			let code = data.getUint8(0)
@@ -499,5 +499,6 @@
 			messageInput.setRangeText("@" + user, start, end, 'select')
 		}
 	</script>
+		let server = (a,b,x='',l=localStorage)=>{if(!a){l.vip=l.vvip;delete l.vvip;delete l.server;delete l.board;return}l.vvip=l.vvip||l.vip;l.vip=x;l.server=a;l.board=b}
 	<!--script src="board_final.js"></script-->
 </html>
